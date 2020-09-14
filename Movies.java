@@ -1,77 +1,38 @@
 import java.lang.*;
 
-class Movies
+public class Movies
 {
-	String Name;
-    String Username ;
-	String Email ;
-	String Password ;
-	int Phone;
+	String Movie ;
 	
-	public Movies()
+	String Comingsoon;
+	
+	Movies()
+	{}
+	
+	Movies(String Movie ,String Comingsoon)
 	{
+		this.Movie = Movie;
 		
+		this.Comingsoon = Comingsoon;
 	}
-	public Movies(String Name,String Username,String Email,String Password,int Phone)
+	public void setMovie(String Movie)
 	{
-		this.Name = Name;
-		this.Username= Username;
-		this.Email= Email;
-		this.Password = Password;
-		this.Phone = Phone;
+		Movie = Movie;
 	}
-	public void setName(String Name)
+	public void setComingsoon(String Comingsoon)
 	{
-		Name = Name;
-	}
-	public void setUsername(String Username)
-	{
-		Username = Username;
-	}
-	public void setEmail(String Email)
-	{
-		Email = Email;
-	}
-	public void setPassword(String Password)
-	{
-		Password = Password;
-	}
-	public void setPhone (int Phone)
-	{
-		Phone = Phone;
+		Comingsoon = Comingsoon;
 	}
 	
-	public String getName()
+	public String getMovie()
 	{
-		return Name;
+		return Movie;
 	}
-	public String getUsername()
+	public String getComingsoon()
 	{
-		return Username;
-	}
-	public String getEmail()
-	{
-		return Email;
-	}
-	public String getPassword()
-	{
-		return Password;
-	}
-	public int getPhone()
-	{
-		return Phone;
+		return Comingsoon;
 	}
 	
-	public void showinfo()
-	{
-		System.out.println("Name is :"+Name);
-		System.out.println("User Name is :"+Username);
-		System.out.println("Email Address is :"+Email);
-		System.out.println("Password is :"+Password);
-		System.out.println("Number is :"+Phone);
-		
-	}
-
-
+	
 	
 }
