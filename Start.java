@@ -6,7 +6,7 @@ public class Start
 {
 	public static void main(String []args)
 	{
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);    
 		Admin ad = new Admin();
 		Account a= new Account();
 		
@@ -54,6 +54,17 @@ public class Start
 					
 					System.out.print("Confirm password : ");
 					String cPass = sc.next();
+
+					if(pass.equals(cPass))
+					{
+						System.out.println("Password and confirm password matced");
+					}
+					else
+					{
+						System.out.println("Registration Failed!!!");
+						System.out.println("Password and confirm password do not match!! \n Try Again!");
+						break;
+					}
 					
 					a = new Account(name, userName, email, phnNo, pass, cPass);
 					
