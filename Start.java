@@ -99,6 +99,7 @@ public class Start
 						System.out.println("\t2. SHOW TIME");
 						System.out.println("\t3. TICKET PRICE");
 						System.out.println("\t4. ABOUT US");
+						System.out.println("\t5  Logout");
 						System.out.println("-----------------------------------\n");
 						
 						int choice1 = sc.nextInt();
@@ -182,6 +183,10 @@ public class Start
 								System.out.println("Romiul Bhaban (Ground Floor), Gazipur, Benapole Bazar, Benapole");
 								break;
 							}
+							case 5:
+							System.out.println("Loging out!!");
+							break;
+
 							default :
 							{
 								System.out.println("No Such Option!!");
