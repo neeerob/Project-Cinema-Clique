@@ -10,6 +10,7 @@ public class Start
 		Admin ad = new Admin();
 		Account a= new Account();
 		
+		
 		System.out.println("-----------------------------------");
 		System.out.println("Welcome to Cinema Clique");
 		System.out.println("-----------------------------------\n");
@@ -106,21 +107,79 @@ public class Start
 						{
 							case 1:
 							{
+								System.out.println("---------------------------------");
+								System.out.println("Movies Lists Are given bellow");
+								System.out.println("---------------------------------");
+								ad.showAllMovies();
+
+
 								break;
 							}
 							
 							case 2: 
 							{
+								System.out.println("---------------------------------");
+								System.out.println("Show Time");
+								System.out.println("---------------------------------");
+								ad.showTicketPricing();
+								System.out.println("Enter movie name that ticket you want to purchase: ");
+								String mov = sc.next();
+								Movies m4 = ad.searchMovie(mov);
+											if(m4 != null)
+											{
+												System.out.println("Movie Found with name "+m4.getMovie());
+												System.out.println("Movie Director "+m4.getDirector());
+												System.out.println("Movie Story "+m4.getStory());
+												System.out.println("Movie Duration "+m4.getDuration());
+
+													System.out.print("Enter VISA/AMEX/MASTERCARD : ");
+													String visaCard = sc.next();
+					
+													System.out.print("Enter Number behind card : ");
+													String numberBehindCard = sc.next();
+					
+													System.out.print("Enter user name : ");
+													String userName = sc.next();
+					
+													System.out.print("Enter Duration : ");
+													String pin = sc.next();
+
+													Payment payment1 = new Payment(visaCard,userName,numberBehindCard,pin);
+
+													System.out.println("You purches movie name : "+m4.getMovie());
+
+													System.out.print("THANK YOU FOR PURCHASING FROM PROJECT CINEMA CLIQUE!!");
+													break;
+
+											}
+											else
+											{
+												System.out.println("Movie Does Not Exist");
+												System.out.println("--------------------");
+
+											}
+
+								//purches
+										
+								
 								break;
 							}
 							
 							case 3:
 							{
+								System.out.println("---------------------------------");
+								System.out.println("Movies Lists and ticket price ");
+								System.out.println("---------------------------------");
+								ad.showTicketPricing();
 								break;
 							}
 							
 							case 4:
 							{
+								System.out.println("Address: \n B#314, JAMUNA CITY, Chowdhury Bhaban (3rd Floor), Bashundhara, Dhaka, Bangladesh");
+								
+								System.out.println("Head Office:");
+								System.out.println("Romiul Bhaban (Ground Floor), Gazipur, Benapole Bazar, Benapole");
 								break;
 							}
 							default :
@@ -183,8 +242,11 @@ public class Start
 					
 										System.out.print("Enter Duration : ");
 										String dur = sc.next();
+
+										System.out.print("2D/3D Movie ");
+										String dimen = sc.next();
 										
-										Movies m1 = new Movies(mName, dName, mStory, dur);
+										Movies m1 = new Movies(mName, dName, mStory, dur,dimen);
 										
 										if(ad.insertMovie(m1))
 										{

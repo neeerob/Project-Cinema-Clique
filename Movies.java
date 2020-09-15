@@ -2,22 +2,27 @@ import java.lang.*;
 
 public class Movies
 {
-	String movieName ;	
-	String director;
-	String story;
-	String duration;
-	String Comingsoon;	
-	String Showtime;
-	double ticketPrice;
+	protected String movieName ;	
+	protected String director;
+	protected String story;
+	protected String duration;
+	protected String Comingsoon;	
+	protected String Showtime;
+	protected double ticketPrice;
+	protected String dimention;
+
+	
 	
 	Movies(){}
 	
-	Movies(String movieName, String director, String story, String duration)
+	Movies(String movieName, String director, String story, String duration,String dimention)
 	{
 		this.movieName=movieName;
 		this.director=director;
 		this.story=story;
 		this.duration=duration;
+		this.dimention = dimention;
+		
 	}
 	public void SetMovie(String movieName)
 	{
@@ -46,6 +51,14 @@ public class Movies
 	public void setTicketPrice(double ticketPrice)
 	{
 		this.ticketPrice=ticketPrice;
+	}
+	public void setDimention(String dimention)
+	{
+		this.dimention = dimention;
+	}
+	public String getDimention()
+	{
+		return dimention;
 	}
 	public String getDirector()
 	{
@@ -79,6 +92,15 @@ public class Movies
 	{
 		return ticketPrice;
 	}
-	
+
+	public void showMovies()
+	{
+		System.out.println("Movie name : " + movieName);
+		System.out.println("Movie duration : " + duration);
+		System.out.println("Movie director name : " + director);
+
+		System.out.println("-----------------------------");
+	}
+
 	
 }
