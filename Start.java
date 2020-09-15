@@ -124,14 +124,35 @@ public class Start
 								System.out.println("---------------------------------");
 								ad.showTicketPricing();
 								System.out.println("Enter movie name that ticket you want to purchase: ");
-								String mov = sc.next();
+								String mov = sc.next();	
 								Movies m4 = ad.searchMovie(mov);
+
+								String dimention2d = "2d";
+								 String dimention2D = "2D";
+								 String dimention3D = "3D";
+								 String dimention3d = "3d";
+
 											if(m4 != null)
 											{
 												System.out.println("Movie Found with name "+m4.getMovie());
 												System.out.println("Movie Director "+m4.getDirector());
 												System.out.println("Movie Story "+m4.getStory());
 												System.out.println("Movie Duration "+m4.getDuration());
+												if(m4.getDimention().equals(dimention2D) || m4.getDimention().equals(dimention2d))
+												{
+												
+												System.out.println("Movies Dimention : 2D");
+												System.out.println("Movies Price : 450 $"  );
+												
+												}
+												if(m4.getDimention().equals(dimention3D) || m4.getDimention().equals(dimention3d))
+												{
+												
+												System.out.println("Movies Dimention : 3D");
+												System.out.println("Movies Price : 550 $" );
+												
+												}
+
 
 													System.out.print("Enter VISA/AMEX/MASTERCARD : ");
 													String visaCard = sc.next();
