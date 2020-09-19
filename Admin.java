@@ -54,7 +54,7 @@ public class Admin
 		{
 			if(movies[i] != null)
 			{
-				if(movies[i].getMovie() == Movie)
+				if(movies[i].getMovie().equals(Movie))
 				{
 					m2 = movies[i];
 					break;
@@ -116,6 +116,7 @@ public class Admin
 				if(movies[i].getDimention().equals(dimention2D) || movies[i].getDimention().equals(dimention2d))
 				{
 					System.out.println("Movies Name : " + movies[i].getMovie());
+					System.out.println("Time : " + movies[i].getTime()+movies[i].getAmOrPm());
 					System.out.println("Movies Dimention : 2D");
 					System.out.println("Movies Price : 450"  );
 					System.out.println("---------------------------");

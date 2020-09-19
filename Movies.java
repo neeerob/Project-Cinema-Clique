@@ -10,20 +10,25 @@ public class Movies
 	protected String Showtime;
 	protected double ticketPrice;
 	protected String dimention;
+	protected String time;
+	protected String amOrPm;
 
 	
 	
 	Movies(){}
 	
-	Movies(String movieName, String director, String story, String duration,String dimention)
+	Movies(String movieName, String director, String story, String duration,String dimention,String time,String amOrPm)
 	{
 		this.movieName=movieName;
 		this.director=director;
 		this.story=story;
 		this.duration=duration;
 		this.dimention = dimention;
+		this.time = time;
+		this.amOrPm = amOrPm;
 		
 	}
+
 	public void SetMovie(String movieName)
 	{
 		this.movieName = movieName;
@@ -91,6 +96,22 @@ public class Movies
 	public double getTicketPrice()
 	{
 		return ticketPrice;
+	}
+	public void setTime()
+	{
+		this.time = time;
+	}
+	public String getTime()
+	{
+		return time;
+	}
+	public void setAmOrPm()
+	{
+		this.amOrPm = amOrPm;
+	}
+	public String getAmOrPm()
+	{
+		return amOrPm;
 	}
 
 	public void showMovies()

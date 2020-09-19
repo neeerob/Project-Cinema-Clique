@@ -134,10 +134,11 @@ public class Start
 
 											if(m4 != null)
 											{
-												System.out.println("Movie Found with name "+m4.getMovie());
-												System.out.println("Movie Director "+m4.getDirector());
-												System.out.println("Movie Story "+m4.getStory());
-												System.out.println("Movie Duration "+m4.getDuration());
+												System.out.println("Movie Found with name : "+m4.getMovie());
+												System.out.println("Movie Director : "+m4.getDirector());
+												System.out.println("Movie Story : "+m4.getStory());
+												System.out.println("Movie Duration : "+m4.getDuration());
+												System.out.println("Time : " + m4.getTime() + m4.getAmOrPm());
 												if(m4.getDimention().equals(dimention2D) || m4.getDimention().equals(dimention2d))
 												{
 												
@@ -271,17 +272,39 @@ public class Start
 
 										System.out.print("2D/3D Movie ");
 										String dimen = sc.next();
-										
-										Movies m1 = new Movies(mName, dName, mStory, dur,dimen);
-										
-										if(ad.insertMovie(m1))
+
+										System.out.print("Enter Time : ");
+										String time = sc.next();
+
+										System.out.print("Am/Pm : ");
+										String amOrPm = sc.next();
+
+										String am = "am";
+										String Am = "Am";
+										String pm = "pm";
+										String Pm = "Pm";
+										if(amOrPm.equals(am) || amOrPm.equals(Am) || amOrPm.equals(pm) || amOrPm.equals(Pm))
 										{
-											System.out.println("A new movie "+m1.getMovie()+" has been added to the list.");
+											Movies m1 = new Movies(mName, dName, mStory, dur,dimen,time,amOrPm);
+										
+											if(ad.insertMovie(m1))
+											{
+												System.out.println("A new movie "+m1.getMovie()+" has been added to the list.");
+											}
+											else
+											{
+												System.out.println("Movie was not added!!");
+											}
+											break;
 										}
 										else
 										{
-											System.out.println("Movie was not added!!");
+											System.out.println("You type wrong keyword! Type Am or Pm!");
 										}
+
+
+										
+										
 					
 										
 										break;
